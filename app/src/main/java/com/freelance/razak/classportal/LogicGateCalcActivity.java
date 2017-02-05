@@ -26,37 +26,54 @@ public class LogicGateCalcActivity extends Fragment {
         toggle1 = (ToggleButton) v.findViewById(R.id.toggleButton1);
         toggle2 = (ToggleButton) v.findViewById(R.id.toggleButton2);
         ortoggle1 = (ToggleButton) v.findViewById(R.id.orToggle1);
+        ortoggle2 = (ToggleButton) v.findViewById(R.id.orToggle2);
+
+        ortextresult = (TextView) v.findViewById(R.id.orTextResult);
+        logictext = (TextView) v.findViewById(R.id.logicText);
+        logiccalc = (TextView) v.findViewById(R.id.logicGateId);
+        toggle1click();
+        toggle2click();
+        ortoggle1click();
+        ortoggle2click();
+        andResult();
+        orResult();
+        return v;
+    }
+
+    public void ortoggle1click(){
         ortoggle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 orResult();
             }
         });
-        ortoggle2 = (ToggleButton) v.findViewById(R.id.orToggle2);
+    }
+
+    public void ortoggle2click(){
         ortoggle2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 orResult();
             }
         });
-        ortextresult = (TextView) v.findViewById(R.id.orTextResult);
-        logictext = (TextView) v.findViewById(R.id.logicText);
-        logiccalc = (TextView) v.findViewById(R.id.logicGateId);
+    }
+
+    public void toggle1click(){
         toggle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 andResult();
             }
         });
+    }
 
+    public void toggle2click(){
         toggle2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 andResult();
             }
         });
-        andResult();
-        return v;
     }
 
     public void andResult(){
