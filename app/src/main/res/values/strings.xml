@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Class Portal</string>
+    <array name="menu">
+        <item>Profile</item>
+        <item>Subjects</item>
+        <item>Lecturers</item>
+        <item>Exam Mode</item>
+        <item>Logout</item>
+    </array>
+
+    <array name="menulecturer">
+        <item>Profile</item>
+        <item>Subject Contents</item>
+        <item>Exam Mode</item>
+        <item>Logout</item>
+    </array>
+
+</resources>
+

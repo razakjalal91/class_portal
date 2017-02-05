@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "516915661170",
+    "firebase_url": "https://classportal-88801.firebaseio.com",
+    "project_id": "classportal-88801",
+    "storage_bucket": "classportal-88801.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516915661170:android:99beabbebc4a7b3f",
+        "android_client_info": {
+          "package_name": "com.freelance.razak.classportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516915661170-ue4jpgcdtuegeeeomb8befn150nvdtmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmrR2wP3tpR-omm3sJoN0JJP0_yENBb3I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
