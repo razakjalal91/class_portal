@@ -18,9 +18,4 @@
         android:background="#d3d3d3"
         android:layout_height="match_parent"></ListView>
 
-
-
-
-
-
 </android.support.v4.widget.DrawerLayout>
