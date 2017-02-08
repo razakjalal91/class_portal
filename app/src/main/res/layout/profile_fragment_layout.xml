@@ -4,16 +4,6 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="30dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/profileText" />
-
-    <TextView
         android:text="Email: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,5 +42,15 @@
         android:layout_toRightOf="@+id/emailText"
         android:layout_toEndOf="@+id/emailText"
         android:id="@+id/userRole" />
+
+    <TextView
+        android:text="Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_marginTop="63dp"
+        android:id="@+id/profileText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -7,20 +7,6 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:backgroundTint="#fff"
-        android:textColor="#fff"
-        android:textColorHint="#fff"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="105dp"
-        android:id="@+id/editTextEmail"
-        android:hint="Email" />
-
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="40dp"
         android:inputType="textPassword"
         android:ems="10"
         android:textColor="#fff"
@@ -43,18 +29,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp" />
 
-    <TextView
-        android:text="Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:textSize="40dp"
-        android:layout_marginTop="30dp"
-        android:id="@+id/registerTitle" />
-
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -69,6 +43,33 @@
         android:layout_alignStart="@+id/editTextPassword"
         android:layout_alignRight="@+id/editTextPassword"
         android:layout_alignEnd="@+id/editTextPassword" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:backgroundTint="#fff"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:layout_marginTop="118dp"
+        android:id="@+id/editTextEmail"
+        android:hint="Email"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/editTextPassword"
+        android:layout_alignStart="@+id/editTextPassword" />
+
+    <TextView
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:id="@+id/registerTitle"
+        android:layout_marginBottom="44dp"
+        android:layout_above="@+id/editTextPassword"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 

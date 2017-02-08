@@ -7,20 +7,6 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:textColor="#fff"
-        android:textColorHint="#fff"
-        android:backgroundTint="#fff"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp"
-        android:id="@+id/editTextEmail"
-        android:hint="Email" />
-
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="40dp"
         android:inputType="textPassword"
         android:textColor="#fff"
         android:backgroundTint="#fff"
@@ -44,18 +30,6 @@
         android:clickable="true"
         android:id="@+id/toRegister" />
 
-    <TextView
-        android:text="Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:textSize="40dp"
-        android:id="@+id/loginTittle" />
-
     <Button
         android:text="Login"
         android:layout_width="300dp"
@@ -70,4 +44,30 @@
         android:layout_alignStart="@+id/editTextPassword"
         android:layout_alignRight="@+id/editTextPassword"
         android:layout_alignEnd="@+id/editTextPassword" />
+
+    <TextView
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:id="@+id/loginTittle"
+        android:layout_above="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="51dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:backgroundTint="#fff"
+        android:layout_marginTop="136dp"
+        android:id="@+id/editTextEmail"
+        android:hint="Email"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

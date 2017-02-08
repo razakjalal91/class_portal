@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/appbar_layout"></include>
 
     <TextView
         android:text="OFF"
@@ -10,7 +11,7 @@
         android:layout_marginRight="76dp"
         android:layout_marginTop="83dp"
         android:layout_marginEnd="76dp"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="20dp"
         android:id="@+id/logicText"
         android:layout_below="@+id/logicGateId"
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/toggleButton1"
+        android:textColor="#000"
         android:background="@drawable/toggledesign"
         android:layout_alignBottom="@+id/logicText"
         android:layout_toLeftOf="@+id/logicGateId"
@@ -32,23 +34,12 @@
         android:text="ToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:background="@drawable/toggledesign"
         android:id="@+id/toggleButton2"
         android:layout_below="@+id/logicText"
         android:layout_alignLeft="@+id/toggleButton1"
         android:layout_alignStart="@+id/toggleButton1" />
-
-    <TextView
-        android:text="AND Gate"
-        android:textSize="20dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:id="@+id/logicGateId"
-        android:textColor="#000"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <ToggleButton
         android:text="ToggleButton"
@@ -58,6 +49,7 @@
         android:background="@drawable/toggledesign"
         android:layout_alignRight="@+id/orToggle1"
         android:layout_alignEnd="@+id/orToggle1"
+        android:textColor="#000"
         android:layout_marginTop="29dp"
         android:id="@+id/orToggle2" />
 
@@ -66,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/orToggle1"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="20dp"
         android:layout_alignRight="@+id/logicText"
         android:layout_alignEnd="@+id/logicText"
@@ -77,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/orToggle1"
+        android:textColor="#000"
         android:background="@drawable/toggledesign"
         android:layout_below="@+id/toggleButton2"
         android:layout_toLeftOf="@+id/orTitle"
@@ -88,12 +81,25 @@
         android:layout_height="24dp"
         android:text="OR Gate"
         android:textSize="20dp"
-        android:textColor="#000"
+        android:textColor="#fff"
+        android:textStyle="bold"
         android:id="@+id/orTitle"
         android:layout_below="@+id/toggleButton2"
         android:layout_alignRight="@+id/logicGateId"
         android:layout_alignEnd="@+id/logicGateId"
         android:layout_marginTop="20dp" />
+
+    <TextView
+        android:text="AND Gate"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        android:id="@+id/logicGateId"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
