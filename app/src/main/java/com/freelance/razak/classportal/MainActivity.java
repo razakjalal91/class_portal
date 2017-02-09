@@ -21,7 +21,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -45,6 +48,13 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+        MobileAds.initialize(getApplicationContext(),"ca-app-pub-4240490864472000~8989634173");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest
+                .Builder()
+                .addTestDevice("844126F6D820EA050520E0CD3EA3E270")
+                .build();
+        mAdView.loadAd(adRequest);
 
         firebaseAuth = FirebaseAuth.getInstance();
 

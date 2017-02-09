@@ -17,8 +17,8 @@ import android.widget.ToggleButton;
  */
 
 public class LogicGateCalcActivity extends Fragment {
-    protected ToggleButton toggle1,toggle2,ortoggle1,ortoggle2;
-    protected TextView logictext,logiccalc,ortextresult;
+    protected ToggleButton toggle1,toggle2,ortoggle1,ortoggle2,nottoggle1;
+    protected TextView logictext,logiccalc,ortextresult,nottextresult;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.logic_gate_layout,container,false);
@@ -27,10 +27,12 @@ public class LogicGateCalcActivity extends Fragment {
         toggle2 = (ToggleButton) v.findViewById(R.id.toggleButton2);
         ortoggle1 = (ToggleButton) v.findViewById(R.id.orToggle1);
         ortoggle2 = (ToggleButton) v.findViewById(R.id.orToggle2);
-
+        nottoggle1 = (ToggleButton) v.findViewById(R.id.notToggle1);
+        nottextresult = (TextView) v.findViewById(R.id.notTextresult);
         ortextresult = (TextView) v.findViewById(R.id.orTextResult);
         logictext = (TextView) v.findViewById(R.id.logicText);
         logiccalc = (TextView) v.findViewById(R.id.logicGateId);
+        nottoggle1click();
         toggle1click();
         toggle2click();
         ortoggle1click();
@@ -38,6 +40,15 @@ public class LogicGateCalcActivity extends Fragment {
         andResult();
         orResult();
         return v;
+    }
+
+    public void nottoggle1click(){
+        nottoggle1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                notResult();
+            }
+        });
     }
 
     public void ortoggle1click(){
@@ -127,6 +138,23 @@ public class LogicGateCalcActivity extends Fragment {
             ortextresult.setText("ON");
         }else{
             ortextresult.setText("OFF");
+        }
+    }
+
+    public void notResult(){
+        boolean nottoggle1checked = nottoggle1.isChecked();
+        if(nottoggle1checked){
+            Drawable d = getResources().getDrawable(R.drawable.toggledesignon);
+            nottoggle1.setBackgroundDrawable(d);
+        }else{
+            Drawable d = getResources().getDrawable(R.drawable.toggledesign);
+            nottoggle1.setBackgroundDrawable(d);
+        }
+
+        if(nottoggle1checked){
+            nottextresult.setText("OFF");
+        }else{
+            nottextresult.setText("ON");
         }
     }
 
