@@ -4,33 +4,12 @@
     android:layout_height="fill_parent"
     android:layout_width="fill_parent">
 <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main">
-    <include layout="@layout/appbar_layout"></include>
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:background="@drawable/toggledesign"
-        android:id="@+id/toggleButton2"
-        android:layout_below="@+id/logicText"
-        android:layout_alignLeft="@+id/toggleButton1"
-        android:layout_alignStart="@+id/toggleButton1" />
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/orToggle1"
-        android:background="@drawable/toggledesign"
-        android:layout_alignRight="@+id/orToggle1"
-        android:layout_alignEnd="@+id/orToggle1"
-        android:textColor="#000"
-        android:layout_marginTop="29dp"
-        android:id="@+id/orToggle2" />
+    <include layout="@layout/appbar_layout"
+        android:id="@+id/include2"></include>
 
     <TextView
         android:layout_width="85dp"
@@ -44,18 +23,6 @@
         android:layout_alignRight="@+id/logicGateId"
         android:layout_alignEnd="@+id/logicGateId"
         android:layout_marginTop="20dp" />
-
-    <TextView
-        android:text="AND Gate"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:id="@+id/logicGateId"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="OFF"
@@ -72,63 +39,6 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="OFF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textSize="20dp"
-        android:id="@+id/orTextResult"
-        android:layout_below="@+id/orToggle1"
-        android:layout_alignLeft="@+id/logicText"
-        android:layout_alignStart="@+id/logicText" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/orgate"
-        android:id="@+id/imageView4"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/toggleButton1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/andgate"
-        android:id="@+id/andgatepic"
-        android:layout_marginBottom="22dp"
-        android:layout_above="@+id/orToggle2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/toggleButton1"
-        android:textColor="#000"
-        android:background="@drawable/toggledesign"
-        android:layout_marginBottom="22dp"
-        android:layout_above="@+id/toggleButton2"
-        android:layout_toLeftOf="@+id/logicGateId"
-        android:layout_toStartOf="@+id/logicGateId"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/orToggle1"
-        android:textColor="#000"
-        android:background="@drawable/toggledesign"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/orTitle"
-        android:layout_alignLeft="@+id/toggleButton2"
-        android:layout_alignStart="@+id/toggleButton2" />
-
-    <TextView
         android:layout_width="90dp"
         android:layout_height="match_parent"
         android:text="NOT Gate"
@@ -141,27 +51,6 @@
         android:layout_alignLeft="@+id/orTitle"
         android:layout_alignStart="@+id/orTitle" />
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/notgate"
-        android:id="@+id/notgateimage"
-        android:layout_below="@+id/orTextResult"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:background="@drawable/toggledesign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/notToggle1"
-        android:textColor="#000"
-        android:layout_marginTop="32dp"
-        android:layout_below="@+id/notgatetitle"
-        android:layout_alignLeft="@+id/orToggle2"
-        android:layout_alignStart="@+id/orToggle2" />
-
     <TextView
         android:text="ON"
         android:textColor="#fff"
@@ -173,6 +62,121 @@
         android:layout_alignBottom="@+id/notToggle1"
         android:layout_alignLeft="@+id/orTextResult"
         android:layout_alignStart="@+id/orTextResult" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="#000"
+        android:textSize="10dp"
+        android:background="@drawable/toggledesign"
+        android:id="@+id/toggleButton2"
+        android:layout_alignTop="@+id/logicText"
+        android:layout_alignLeft="@+id/andgatepic"
+        android:layout_alignStart="@+id/andgatepic"
+        android:layout_marginTop="12dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/orgate"
+        android:id="@+id/orgatepic"
+        android:layout_alignTop="@+id/orTitle"
+        android:layout_alignRight="@+id/notTextresult"
+        android:layout_alignEnd="@+id/notTextresult" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textSize="10dp"
+        android:id="@+id/orToggle1"
+        android:textColor="#000"
+        android:background="@drawable/toggledesign"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/andgatepic"
+        android:layout_alignLeft="@+id/orgatepic"
+        android:layout_alignStart="@+id/orgatepic" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textSize="10dp"
+        android:background="@drawable/toggledesign"
+        android:textColor="#000"
+        android:id="@+id/orToggle2"
+        android:layout_below="@+id/orToggle1"
+        android:layout_alignLeft="@+id/orgatepic"
+        android:layout_alignStart="@+id/orgatepic" />
+
+    <TextView
+        android:text="OFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:id="@+id/orTextResult"
+        android:layout_above="@+id/notgatetitle"
+        android:layout_alignLeft="@+id/logicText"
+        android:layout_alignStart="@+id/logicText"
+        android:layout_marginBottom="17dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/notgate"
+        android:id="@+id/notgatepic"
+        android:layout_below="@+id/orTextResult"
+        android:layout_alignLeft="@+id/orgatepic"
+        android:layout_alignStart="@+id/orgatepic" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:background="@drawable/toggledesign"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textSize="10dp"
+        android:id="@+id/notToggle1"
+        android:textColor="#000"
+        android:layout_below="@+id/orgatepic"
+        android:layout_alignLeft="@+id/notgatepic"
+        android:layout_alignStart="@+id/notgatepic"
+        android:layout_marginTop="12dp" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/toggleButton1"
+        android:layout_marginBottom="-10dp"
+        android:textColor="#000"
+        android:textSize="10dp"
+        android:background="@drawable/toggledesign"
+        android:layout_above="@+id/toggleButton2"
+        android:layout_alignLeft="@+id/andgatepic"
+        android:layout_alignStart="@+id/andgatepic" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/andgate"
+        android:id="@+id/andgatepic"
+        android:layout_below="@+id/logicGateId"
+        android:layout_alignLeft="@+id/orgatepic"
+        android:layout_alignStart="@+id/orgatepic" />
+
+    <TextView
+        android:text="AND Gate"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:id="@+id/logicGateId"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_below="@+id/include2"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

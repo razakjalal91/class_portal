@@ -1,7 +1,10 @@
 package com.freelance.razak.classportal;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -19,10 +23,14 @@ import android.widget.ToggleButton;
 public class LogicGateCalcActivity extends Fragment {
     protected ToggleButton toggle1,toggle2,ortoggle1,ortoggle2,nottoggle1;
     protected TextView logictext,logiccalc,ortextresult,nottextresult;
+    protected ImageView andgateimg,orgateimg,notgateimg;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.logic_gate_layout,container,false);
 
+        andgateimg = (ImageView) v.findViewById(R.id.andgatepic);
+        orgateimg = (ImageView) v.findViewById(R.id.orgatepic);
+        notgateimg = (ImageView) v.findViewById(R.id.notgatepic);
         toggle1 = (ToggleButton) v.findViewById(R.id.toggleButton1);
         toggle2 = (ToggleButton) v.findViewById(R.id.toggleButton2);
         ortoggle1 = (ToggleButton) v.findViewById(R.id.orToggle1);
@@ -39,6 +47,9 @@ public class LogicGateCalcActivity extends Fragment {
         ortoggle2click();
         andResult();
         orResult();
+        andimgbitmap();
+        orimgbitmap();
+        notimgbitmap();
         return v;
     }
 
@@ -158,5 +169,21 @@ public class LogicGateCalcActivity extends Fragment {
         }
     }
 
+    //  Convert image to bitmap
+    public void andimgbitmap(){
+        andgateimg.buildDrawingCache();
+        andgateimg.getDrawingCache();
+    }
+
+    public void orimgbitmap(){
+        orgateimg.buildDrawingCache();
+        orgateimg.getDrawingCache();
+    }
+
+    public void notimgbitmap(){
+        notgateimg.buildDrawingCache();
+        notgateimg.getDrawingCache();
+    }
+    //  Convert image to bitmap
 
 }
