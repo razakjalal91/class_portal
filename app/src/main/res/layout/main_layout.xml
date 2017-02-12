@@ -13,15 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
 
-    <ListView
-        android:id="@+id/drawerList"
-        android:layout_width="240dp"
-        android:entries="@array/menu"
-        android:layout_gravity="left"
-        android:background="#d3d3d3"
-        android:layout_height="match_parent"></ListView>
-
-    <com.google.android.gms.ads.AdView
+ <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
@@ -32,5 +24,5 @@
         ads:adUnitId="@string/banner_ad_unit_id">
     </com.google.android.gms.ads.AdView>
 
-
+    <include layout="@layout/bottom_appbar"></include>
 </android.support.v4.widget.DrawerLayout>

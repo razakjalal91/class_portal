@@ -7,6 +7,7 @@
         android:text="Email: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
         android:layout_below="@+id/profileText"
         android:layout_toLeftOf="@+id/profileText"
         android:layout_toStartOf="@+id/profileText"
@@ -17,6 +18,7 @@
 
     <TextView
         android:text="UserEmail"
+        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/emailText"
@@ -26,6 +28,7 @@
 
     <TextView
         android:text="Role: "
+        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/emailText"
@@ -37,6 +40,7 @@
     <TextView
         android:text="userrole"
         android:layout_width="wrap_content"
+        android:textColor="#fff"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/roleText"
         android:layout_toRightOf="@+id/emailText"
@@ -48,7 +52,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        android:layout_marginTop="63dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_marginTop="189dp"
         android:id="@+id/profileText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />

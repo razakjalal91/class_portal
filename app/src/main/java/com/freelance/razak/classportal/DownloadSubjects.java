@@ -35,9 +35,13 @@ public class DownloadSubjects extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.download_subject_layout,container,false);
-        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        final DatabaseReference databaseReference = firebaseDatabase.getReference();
-        final ArrayList<String> subjectsarray = new ArrayList<>();
+        logicgate(v);
+        subjectlist(v);
+
+        return v;
+    }
+
+    public void logicgate(View v){
         final ArrayList<String> logicarray = new ArrayList<>();
         logicarray.add("Logic Gate Calculator");
         logicgate = (ListView) v.findViewById(R.id.logicGate);
@@ -53,6 +57,12 @@ public class DownloadSubjects extends Fragment {
                 Toast.makeText(getActivity().getBaseContext(),"Logic Gate",Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void subjectlist(View v){
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference = firebaseDatabase.getReference();
+        final ArrayList<String> subjectsarray = new ArrayList<>();
         subjectslist = (ListView) v.findViewById(R.id.subjectList);
         String parseId = getArguments().getString("lectid");
         databaseReference.child("lecturers_subject").child(parseId).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -76,28 +86,30 @@ public class DownloadSubjects extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final String subjectname = (String) parent.getItemAtPosition(position);
                 final String parseid = getArguments().getString("lectid");
-                    databaseReference.child("lecturers_subject").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            final String url = dataSnapshot.child(parseid).child(subjectname).getValue().toString();
-                            Intent intent = new Intent(Intent.ACTION_VIEW);
-                            intent.setData(Uri.parse(url));
-                            startActivity(intent);
-                            Toast.makeText(getActivity().getBaseContext(), "Redirecting..", Toast.LENGTH_SHORT).show();
-                        }
+                databaseReference.child("lecturers_subject").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        final String url = dataSnapshot.child(parseid).child(subjectname).getValue().toString();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("parse",url);
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
+                        WebviewActivity webviewActivity = new WebviewActivity();
+                        webviewActivity.setArguments(bundle);
+                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.mainFrame, webviewActivity);
+                        fragmentTransaction.commit();
+                        Toast.makeText(getActivity().getBaseContext(),"Web View",Toast.LENGTH_SHORT).show();
+                    }
 
-                        }
-                    });
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
             }
         });
 
-
-
-        return v;
     }
 
 }

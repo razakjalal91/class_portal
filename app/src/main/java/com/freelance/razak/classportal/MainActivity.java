@@ -38,16 +38,23 @@ import com.google.firebase.database.ValueEventListener;
  */
 
 public class MainActivity extends AppCompatActivity{
-    protected Button btnLogout;
+    protected Button btnLogout,profileBtn,lecturersBtn,subjectsBtn,examBtn;
     protected FirebaseAuth firebaseAuth;
-    protected TextView userText;
-    protected String[] menuArray;
-    private DrawerLayout layoutDrawer;
-    private ListView listDrawer;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+//        loadAds();
+        firebaseMethod();
+        profileClick();
+        subjectsClick();
+        lecturersClick();
+        examClick();
+        logout();
+
+    }
+
+    public void loadAds(){
         MobileAds.initialize(getApplicationContext(),"ca-app-pub-4240490864472000~8989634173");
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest
@@ -55,62 +62,77 @@ public class MainActivity extends AppCompatActivity{
                 .addTestDevice("844126F6D820EA050520E0CD3EA3E270")
                 .build();
         mAdView.loadAd(adRequest);
+    }
 
+    public void firebaseMethod(){
         firebaseAuth = FirebaseAuth.getInstance();
-
         FirebaseUser user = firebaseAuth.getCurrentUser();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference dbref = database.getReference();
-        menuArray = getResources().getStringArray(R.array.menu);
-            layoutDrawer = (DrawerLayout) findViewById(R.id.drawerLayout);
-
-
-            listDrawer = (ListView) findViewById(R.id.drawerList);
-            listDrawer.bringToFront();
-            listDrawer.requestLayout();
-            listDrawer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    if (position == 0) {
-                        Toast.makeText(getApplicationContext(), "Profile", Toast.LENGTH_SHORT).show();
-                        ProfileFragment profile = new ProfileFragment();
-                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.mainFrame, profile);
-                        fragmentTransaction.commit();
-                    }
-
-                    if (position == 1) {
-                        Toast.makeText(getApplicationContext(), "Subjects", Toast.LENGTH_SHORT).show();
-                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        SubjectsFragment subjects = new SubjectsFragment();
-                        fragmentTransaction.replace(R.id.mainFrame, subjects);
-                        fragmentTransaction.commit();
-                    }
-
-                    if (position == 2) {
-                        Toast.makeText(getApplicationContext(), "Lecturers", Toast.LENGTH_SHORT).show();
-                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        LecturersFragment lecturers = new LecturersFragment();
-                        fragmentTransaction.replace(R.id.mainFrame,lecturers);
-                        fragmentTransaction.commit();
-                    }
-
-                    if (position == 3) {
-                        Toast.makeText(getApplicationContext(), "Exam", Toast.LENGTH_SHORT).show();
-                    }
-
-                    if (position == 4) {
-                        firebaseAuth.signOut();
-                        finish();
-                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-                    }
-
-                }
-            });
-
-
     }
 
+    public void profileClick(){
+        profileBtn = (Button) findViewById(R.id.profileBot);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Profile", Toast.LENGTH_SHORT).show();
+                ProfileFragment profile = new ProfileFragment();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.mainFrame, profile);
+                fragmentTransaction.commit();
+            }
+        });
+    }
 
+    public void subjectsClick(){
+        subjectsBtn = (Button) findViewById(R.id.subjectBot);
+        subjectsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Subjects", Toast.LENGTH_SHORT).show();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                SubjectsFragment subjects = new SubjectsFragment();
+                fragmentTransaction.replace(R.id.mainFrame, subjects);
+                fragmentTransaction.commit();
+            }
+        });
+    }
+
+    public void lecturersClick(){
+        lecturersBtn = (Button) findViewById(R.id.lecturerBot);
+        lecturersBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Lecturers", Toast.LENGTH_SHORT).show();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                LecturersFragment lecturers = new LecturersFragment();
+                fragmentTransaction.replace(R.id.mainFrame,lecturers);
+                fragmentTransaction.commit();
+            }
+        });
+    }
+
+    public void examClick(){
+        examBtn = (Button) findViewById(R.id.examBot);
+        examBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Exam", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void logout(){
+        btnLogout = (Button) findViewById(R.id.logout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+            }
+        });
+    }
 
 }
